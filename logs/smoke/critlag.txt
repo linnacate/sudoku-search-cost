@@ -1,0 +1,28 @@
+cmd.exe :   lag=0 done
+At C:\Users\lky18\Documents\work\_release_wt\sudoku_fuze_artifacts\out\smoke_all.ps1:96 char:12
++     $out = & cmd /c $cmdline 2>&1
++            ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  lag=0 done:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  lag=1 done
+  lag=2 done
+  lag=3 done
+  lag=4 done
+  lag=5 done
+  lag=6 done
+
+[solved 20/20]  完整配方 5键+FILT+la0opt, locked=1, sp=2, limit=1
+[lagmin=0]
+
+LAG       avg_guesses     geo_mean 相对LAG0 配对 net(w-l)
+LAG=0         26.1500      21.7756    1.0000
+LAG=1         28.3000      23.7142    1.0822   -2 (w8/l10/t2) z=-0.47   [stale层 546 / raw层 20]
+LAG=2         29.2500      23.1762    1.1185   -6 (w7/l13/t0) z=-1.34   [stale层 524 / raw层 61]
+LAG=3         29.7500      22.9711    1.1377   +0 (w9/l9/t2) z=0.00   [stale层 454 / raw层 141]
+LAG=4         29.2000      23.3815    1.1166   -5 (w6/l11/t3) z=-1.21   [stale层 321 / raw层 263]
+LAG=5         27.1000      22.6124    1.0363   -8 (w4/l12/t4) z=-2.00   [stale层 171 / raw层 371]
+LAG=6         28.4000      23.3251    1.0860   -9 (w1/l10/t9) z=-2.71   [stale层 124 / raw层 444]
+
+注: LAG=k 表示第 d 层选格时用第 d-k 层传播后的 crit 快照.
+    LAG=0 = 标准(每层重算). z 为配对符号检验正态近似.

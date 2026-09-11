@@ -1,0 +1,41 @@
+工具	结果	参数	首行输出
+verify_thm	OK	data\indep600.txt 30	=== 定理 1 独立复核 (data\indep600.txt, N=30) ===
+canon_test	OK	data\indep600.txt 20	=== 规范化 × 5键配方 (data\indep600.txt, N=20) ===
+collide	OK	data\indep600.txt 20	总碰撞 0 对
+abl2	OK	data\indep600.txt 20	=== 消融: 强传播(L2) vs 弱传播(L0) ===
+keyscan	SKIP	-	未编译成功（见 logs\build_win\keyscan*.log）
+sp2	OK	data\indep600.txt 20	=== 传播技术谱系测试 (data\indep600.txt, N=20) ===
+sp3	OK	data\indep600.txt 20	=== 传播技术续扫 (data\indep600.txt, N=20) ===
+verify_sp	OK	data\indep600.txt 20	数据集 data\indep600.txt  nq=20
+sweep_sp	OK	data\indep600.txt 20	dataset=data\indep600.txt N=20
+hcost	OK	data\indep600.txt 20	=== 人类决策步骤核算: 策略=新组合, N=20 (解出 20) ===
+hcost2	OK	data\indep600.txt 20	MODE=0 N=20 解出=20 | 假设=41.1 人试填=96.8 (剪55.6) 传播轮=235.9 擦除格=1053.4 候选删=2665.8 均深=5.2 最深=11 | 时间=6.68h
+hcost_locked	OK	data\indep600.txt 20	=== locked candidates 的人类成本 (data\indep600.txt, N=20) ===
+critmech	OK	data\indep600.txt 20	dataset=data\indep600.txt N=20 [locked=1 splevel=2 limit=1 la0opt=1]
+critwhy	OK	micro data\indep600.txt	模式1: 候选级微观 (N=600 题, 初盘传播后)
+bandbranch	OK	data\indep600.txt 20	cmd.exe : N=20 file=data\indep600.txt
+bandcrit	OK	data\indep600.txt 20	=== 基线 cell 分支 (本文标准 L2) ===
+bandcrit2	OK	data\indep600.txt 20	cell 分支(本文 L2): solved=20/20  guesses=24.85
+syminv	OK	data\indep600.txt 20	题库=data\indep600.txt  题数=20  每題变换数R=8  解出=160
+row1exp	OK	data\indep600.txt 20	N=20  数据集=data\indep600.txt
+keyprof	OK	data\indep600.txt 20	cmd.exe : profiled 20 puzzles
+segscan	OK	data\indep600.txt 20	cmd.exe : loaded 20 puzzles
+abcmp	OK	data\indep600.txt 20 0	N=20
+cstar_dump	OK	data\indep600.txt 20	loaded 20 puzzles
+critlag	OK	data\indep600.txt 20	cmd.exe :   lag=0 done
+critprobe	OK	data\indep600.txt 20	[solved 20/20]
+exact_bench	OK	data\indep600.txt 100 30	===== exact_bench: data\indep600.txt =====
+consolidate	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_alt	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_dsw	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_hkey	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_ewdeg	OK	data\indep600.txt 20	cmd.exe : [EWDEG] unit_conf=8149 cell_conf=25695
+consolidate_critstatic	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_k6	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+consolidate_v10	OK	data\indep600.txt 20	=== 成果夯实: data\indep600.txt (N=20) ===
+keycombo	OK	1 1	[sample5000.txt] N=5000 ... done
+abl3	OK	20	枚举 31 个子集 @ forum N=20 ...
+
+合计: OK=35  非零退出=0  跳过(未编译)=1
+说明: cstar_learn 未跑（需先用 cstar_dump 生成 cstar.bin）；canon_cv / keyscan 在 MSVC 下编译失败（C99 变长数组）。
+底噪: 部分工具把进度写到 stderr，经 cmd 启动会带 'cmd.exe : ' 前缀，退出码仍为 0。

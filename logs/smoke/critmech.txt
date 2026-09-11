@@ -1,0 +1,9 @@
+dataset=data\indep600.txt N=20 [locked=1 splevel=2 limit=1 la0opt=1]
+G = P + Ntop*ctop ; chk 应等于 G
+
+anti-crit (crit==0)    sol= 20/ 20 G=    1144 chk=    1144 | P=    151 Ntop=     69 ctop=14.391 | miss/node=0.457 hit1=0.417 fill/G=5.463(s7.616 f4.458)
+MRV (F=all)            sol= 20/ 20 G=    1144 chk=    1144 | P=    151 Ntop=     69 ctop=14.391 | miss/node=0.457 hit1=0.417 fill/G=5.463(s7.616 f4.458)
+critmrv (F=crit>0)     sol= 20/ 20 G=    1127 chk=    1127 | P=    133 Ntop=     69 ctop=14.406 | miss/node=0.519 hit1=0.376 fill/G=5.527(s8.647 f4.507)
+full K1-K5             sol= 20/ 20 G=     497 chk=     497 | P=    107 Ntop=     72 ctop= 5.417 | miss/node=0.673 hit1=0.252 fill/G=6.744(s10.748 f4.431)
+[hook] anticrit MRV    sol= 20/ 20 G=    1028 chk=    1028 | P=    132 Ntop=     60 ctop=14.933 | miss/node=0.455 hit1=0.455 fill/G=4.581(s8.712 f3.462)
+[hook] critmax         sol= 20/ 20 G=    1048 chk=    1048 | P=    112 Ntop=    114 ctop= 8.211 | miss/node=1.018 hit1=0.161 fill/G=7.721(s10.268 f6.624)

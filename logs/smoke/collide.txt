@@ -1,0 +1,9 @@
+  总碰撞 0 对
+
+  === 碰撞对的模式分析 ===
+  差异格数分布:
+
+  其中:
+    构成矩形unavoidable set: 0 对 (-nan(ind)%)
+    只涉及 2 个数字      : 0 对 (-nan(ind)%)
+    = unavoidable set 互换: 0 对 (-nan(ind)%)

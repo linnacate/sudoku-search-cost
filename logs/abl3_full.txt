@@ -1,0 +1,23 @@
+枚举 31 个子集 @ forum N=20 ...
+枚举 31 个子集 @ indep600 (验证) ...
+
+  掩码 键组合                         forum   indep600 平均序
+  ----------------------------------------------------------------
+  7      crit pc nEP                       18.47      18.32        1
+  15     crit pc nEP prodF                 19.25      17.99        2
+  31     crit pc nEP prodF critPeer        19.58      17.94        3
+  27     crit pc prodF critPeer            20.09      18.16        4
+  25     crit prodF critPeer               20.09      18.16        5
+  23     crit pc nEP critPeer              20.68      18.41        6
+  6      pc nEP                            21.95      23.77        7
+  22     pc nEP critPeer                   22.17      23.56        8
+  19     crit pc critPeer                  22.20      18.86        9
+  11     crit pc prodF                     22.57      18.15       10
+  9      crit prodF                        22.57      18.15       11
+  18     pc critPeer                       22.84      28.32       12
+
+  --- 关键对照 ---
+  5键(全)        mask=31  forum    19.58  indep    17.94
+  4键(去critPeer) mask=15  forum    19.25  indep    17.99
+  4键(去nEP)      mask=27  forum    20.09  indep    18.16
+  3键(去nEP,critPeer) mask=11 forum    22.57  indep    18.15

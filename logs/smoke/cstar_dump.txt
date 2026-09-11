@@ -1,0 +1,2 @@
+loaded 20 puzzles
+DUMP done nq=20 avgB=31.300 avgKappa=1.900 ratio=0.0607 -> cstar.bin
