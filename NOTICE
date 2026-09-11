@@ -1,0 +1,83 @@
+Sudoku Fuze Solver — Artifact
+Copyright (c) 2026 The Sudoku Fuze Solver Authors
+
+This artifact accompanies the paper "数独求解中的引信格策略"
+(Finding the Fuze: A Study of Variable-Selection Heuristics for Sudoku).
+
+-------------------------------------------------------------------------------
+THIRD-PARTY ATTRIBUTIONS
+-------------------------------------------------------------------------------
+This distribution does NOT contain any third-party source code.
+The following components must be obtained separately by the user.
+See THIRD_PARTY.md for full licensing details.
+
+1. tdoku
+   - Used for: §5.4, §5.9, §6.2.1, §6.2.4 (primary comparison baseline)
+   - License: BSD 2-Clause License
+   - Copyright (c) 2019, Tom Dillon
+   - Obtain: https://github.com/t-dillon/tdoku
+
+2. fsss (A Fast Simple Sudoku Solver)
+   - Used for: §5.4, §6.2.1, §6.2.4 (main same-granularity baseline)
+   - License: NON-STANDARD declaration (commercial use restricted/unclear)
+   - Author: Mladen Dobrichev. Portions derived from bb_sudoku by Brian Turner.
+   - NOTE: Not a standard open-source license. Commercial users should seek
+     explicit permission from the original author.
+
+3. fsss2
+   - Used for: §6.2.1 (baseline upgrade experiment)
+   - License: NOT SPECIFIED (author attribution only)
+   - Author: Mladen Dobrichev, 2014
+
+4. jczsolve (JCZSolve)
+   - Used for: §6.2.3 (supplementary baseline)
+   - License: NONE — source states "The copyright is not specified."
+   - Authors: zhouyundong_2012, champagne, JasonLion (forum.enjoysudoku.com)
+   - IMPORTANT: This component must NOT be redistributed. Only the measured
+     numerical results (factual observations) are cited in the paper.
+     This artifact ships only our own driver (exp/jzrun.c), which contains
+     no third-party code.
+
+-------------------------------------------------------------------------------
+DATASETS
+-------------------------------------------------------------------------------
+Sudoku puzzle sets are compiled from publicly available community collections
+(forum.enjoysudoku.com "hardest" threads; the public "top1465" set).
+
+LICENSING STATUS OF THE DATASETS: UNRESOLVED -- and deliberately treated the
+same strict way as the third-party sources above.
+
+  The upstream publishers attached NO licence, authorisation, or redistribution
+  condition to these puzzle collections. Under the same "no licence specified
+  means do not redistribute" standard that this NOTICE applies to jczsolve, the
+  datasets must therefore NOT be assumed redistributable either.
+
+  We do not rely on the argument that "puzzle strings are factual data":
+  the selection and compilation (e.g. the SER>=11 sampling of sample5000, the
+  curation of top1465) may attract database or compilation rights, and the
+  answer differs by jurisdiction. In a peer-review context, an unverified
+  provenance is itself a risk regardless of the legal conclusion.
+
+  Size of the exposure: ~6.0 MB, 75,831 instances, ~50,231 distinct puzzle
+  strings. Only top1465_clean.txt (2.0% by size) comes from a genuinely
+  independent source; everything else derives from the 48,766-instance forum
+  corpus.
+
+  CONSEQUENCE FOR DISTRIBUTION:
+    * NEITHER the public repository NOR the release archive ships data/*.txt.
+    * Instead, out/fetch_data.py downloads the upstream tdoku data.zip
+      (verified by git blob SHA1 against the GitHub API), rebuilds all five
+      datasets locally by exact rules, and checks each one byte-for-byte
+      against its published MD5. Verified: 5/5 match.
+    * Upstream provenance and the exact reconstruction rules are documented
+      in DATA_NOTICE.md; if the network is unavailable, contact the author.
+
+  Full provenance, digests, and a three-tier mitigation menu:
+  see DATA_NOTICE.md.
+
+CAVEAT ON INTERPRETATION: With the sole exception of top1465_clean.txt, all
+included datasets derive from the same source population. Any generalisation
+claim built on f20k or indep600 as an "independent test" is therefore invalid
+-- it is same-distribution held-out data, not cross-population generalisation.
+See THIRD_PARTY.md §3.
+

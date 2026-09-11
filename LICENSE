@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 linnacate
+Copyright (c) 2026 The Sudoku Fuze Solver Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+-------------------------------------------------------------------------------
+SCOPE NOTE (重要)
+-------------------------------------------------------------------------------
+本许可证仅适用于本仓库中**原创**的代码、脚本与文档，即：
+  - core/ thm/ exp/ open/ tools/ 下的 .c / .cc / .py / .sh 文件
+  - 除 data/ 中明确标注第三方来源者以外的数据文件
+
+本许可证**不**适用于第三方组件（tdoku / fsss / fsss2 / jczsolve 等）。
+这些组件**未随本仓库分发**，其各自的许可状态见 THIRD_PARTY.md 与 NOTICE。
+使用者须自行获取并遵守其原始许可条款。

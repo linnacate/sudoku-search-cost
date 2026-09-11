@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software or the accompanying data, please cite the paper and this artifact."
+title: "Sudoku Fuze-Cell Strategy: Open Reproduction Artifact"
+abstract: >-
+  Solver sources, benchmark instances, per-instance result files, and analysis scripts
+  reproducing every table of the paper "Structure, Irreducibility, and Search Cost in
+  Sudoku: Backdoors, Solver-Relative Difficulty, and Adaptive Variable Selection".
+  Independently re-tested before release: the two zero-tolerance gate values (29.1144 and
+  30.7382 guesses) reproduce to four decimal places under a different compiler and OS
+  (MSVC/Windows) than the authoring build (gcc/Linux).
+type: software
+authors:
+  - family-names: "Lin"
+    given-names: "Kangyu"
+    orcid: "https://orcid.org/0009-0000-3125-3754"
+    affiliation: "Independent Researcher, Xinxiang, Henan, China"
+license: MIT
+repository-code: "https://github.com/linnacate/sudoku-search-cost"
+keywords:
+  - constraint satisfaction
+  - Sudoku
+  - search heuristics
+  - backdoors
+  - adaptive variable ordering
+  - solver-relative difficulty
+references:
+  - type: article
+    title: >-
+      Structure, Irreducibility, and Search Cost in Sudoku: Backdoors,
+      Solver-Relative Difficulty, and Adaptive Variable Selection
+    authors:
+      - family-names: "Lin"
+        given-names: "Kangyu"
+        orcid: "https://orcid.org/0009-0000-3125-3754"
+    year: 2026
+    notes: "Manuscript; preprint identifier to be added once posted."
