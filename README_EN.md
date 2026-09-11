@@ -179,6 +179,26 @@ bash build_3rd.sh             # build the comparison drivers
 | fsss2 | none declared | ❌ | reference only |
 | **jczsolve** | **none ("The copyright is not specified")** | ❌ | **must not be redistributed** |
 
+### Scope of `MANIFEST.sha256` (**read this first if you are checking the git repo**)
+
+`MANIFEST.sha256` covers the files in the **release zip** (the Release asset / Zenodo deposit).
+The git repository deliberately omits some of them:
+
+| In the manifest, not in the repo | Count | Why |
+|---|---:|---|
+| `bin/*` | 40 | prebuilt binaries are `.gitignore`d |
+| `logs/build_win/*.log` | 60 | the `*.log` rule |
+| `results/*.tsv` | 2 | per-instance results are `.gitignore`d |
+
+**So running `python out/verify_manifest.py .` inside a git clone reports
+`missing on disk: 102` and exits 1 — that is expected, not a broken package.**
+For the full check, extract the release zip first:
+
+```bash
+python out/verify_manifest.py .
+# expected: VERDICT: FULL MATCH (all 229 entries)
+```
+
 Read [`THIRD_PARTY.md`](THIRD_PARTY.md) for the full licence-status table, the exact
 declaration texts, and the risk notes.
 

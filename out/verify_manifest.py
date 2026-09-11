@@ -43,5 +43,12 @@ for rel, want, got, size in bad:
     print("   %s" % rel)
     print("     manifest=%s" % want)
     print("     actual  =%s  size=%d" % (got, size))
-print("VERDICT:", "FULL MATCH" if not (miss or extra or bad) else "PROBLEM")
+ok = not (miss or extra or bad)
+print("VERDICT:", "FULL MATCH" if ok else "PROBLEM")
+if not ok:
+    print()
+    print("提示：MANIFEST.sha256 覆盖的是**发布 zip** 的内容。")
+    print("      在 git 仓库里跑，bin/ (40)、logs/build_win/*.log (60)、results/*.tsv (2)")
+    print("      共 102 条会被 .gitignore 排除 —— 这是预期的，不是包坏了。")
+    print("      要全量校验请先解压发布 zip，见 README 的「MANIFEST.sha256 的适用范围」。")
 sys.exit(1 if (miss or extra or bad) else 0)

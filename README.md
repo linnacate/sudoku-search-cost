@@ -161,6 +161,25 @@ bash fetch_third_party.sh        # 获取说明与脚本
 
 完整许可状态、风险提示与署名要求见 **`THIRD_PARTY.md`**。
 
+### 关于 `MANIFEST.sha256` 的适用范围（**仓库自查时请先读这段**）
+
+`MANIFEST.sha256` 列出的是**发布 zip（Release 附件 / Zenodo 归档）**里的全部文件。
+仓库里**故意不含**其中一部分：
+
+| 清单里有、仓库里没有 | 条数 | 原因 |
+|---|---:|---|
+| `bin/*` | 40 | `.gitignore` 排除预编译二进制 |
+| `logs/build_win/*.log` | 60 | `.gitignore` 的 `*.log` 规则 |
+| `results/*.tsv` | 2 | `.gitignore` 排除逐题结果 |
+
+**因此在 git 仓库里跑 `python out/verify_manifest.py .` 会报 `missing on disk: 102` 并退出 1
+—— 这是预期的，不是包坏了。** 要复现清单的全量校验，请在**解压发布 zip 之后**运行：
+
+```bash
+python out/verify_manifest.py .
+# 期望: VERDICT: FULL MATCH（229 条全量匹配）
+```
+
 ---
 
 ## 五、目录结构
